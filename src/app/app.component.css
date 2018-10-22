@@ -1,0 +1,31 @@
+h1 {
+    color: red;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: blue;
+}
+
+h4 {
+    color: purple;
+}
+
+h5 {
+    color: tomato;
+}
+
+.bluesquare{
+width: 200px;
+height: 200px;
+background-color: blue;
+}
+
+.redsquare{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}

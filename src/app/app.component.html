@@ -1,20 +1,79 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <!-- Interpolation des strings -->
   <h1>
-    Welcome to {{ title }}!
+    Interpolation des strings
+    {{title + '1'}}
+    <hr>
+    {{nombre + 2 }}
+    <hr>
+    {{bool}}
+    <hr>
+    {{obj.cle}}
+    <hr>
+    {{square(2)}}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+  <!-- liaison des propriétés-->
+  <h2>
+    Liaison des propriétés
+    <hr>
+    <input [type]="date" [disabled]="btnEnabled"/>
+  </h2>
+
+  <!-- liaison des propriétés-->
+  <h3>
+    Liaison des évènements
+<div
+  style="width:200px;height:200px;"
+  [style.backgroundColor]="color"
+  (click)="changeColor('green')"
+  (mouseenter)="changeColor('blue')"
+  (mouseleave)="changeColor('red')"
+>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+</h3>
+
+<!-- double data-binding -->
+<h4>
+    double data-binding
+    <input type="text" [(ngModel)]="content">
+    <p> {{content}} </p>
+</h4>
+
+<!-- Les directives -->
+<h5>
+    Les directives structurelles
+    <button (click)="display = !display" >Button</button>
+    <p *ngIf="display"> Bonjour </p>
+</h5>
+
+<h5>
+  Les directives d'attributs [ngStyle]
+  <div  [ngStyle]="{
+width:'200px',
+height:'200px',
+backgroundColor: color
+  }">
+  </div>
+</h5>
+
+<h5>
+  Les directives d'attributs [ngClass]
+  <input type="text" [(ngModel)]="color2" />
+  <div  [ngClass]="{
+    bluesquare:color2==='blue',
+    redsquare:color2==='red'
+  }">
+  </div>
+</h5>
+
+<h5>
+  Les directives structurelles [ngFor]
+  <ul>
+    <li *ngFor="let user of users; let i = index;">{{i}} {{user.nom}}</li>
+  </ul>>
+</h5>
+</div>
+  <app-nouveau></app-nouveau>
 
